@@ -1,0 +1,29 @@
+aid: vornamencheck
+name: Vornamencheck
+description: 'Vornamencheck is a company surfaced via the API Evangelist harvest backlog (source: new-submission)
+  and added to the network as a stub for full-pipeline profiling.'
+url: https://raw.githubusercontent.com/api-evangelist/vornamencheck/refs/heads/main/apis.yml
+x-type: company
+x-source: harvest:new-submission
+x-tier: stub
+x-tier-reason: harvest
+specificationVersion: '0.20'
+created: '2026-10-02'
+modified: '2026-10-02'
+tags:
+- Company
+apis: []
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+- FN: APIs.json
+  email: info@apis.io
+common:
+- type: Website
+  url: https://vornamencheck.de/api/v1/openapi.json
+- type: Documentation
+  url: https://vornamencheck.de/en
+x-submission-notes: German first-name gender classification REST API.
+x-submission-probe: root 200; OpenAPI 3.1.0 6 paths server vornamencheck.de/api/v1; 404 probe 404; no
+  llms/MCP
+x-submitted-by: info@vornamencheck.de (apis.io/add, 2026-09-28)
