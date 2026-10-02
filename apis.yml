@@ -1,29 +1,47 @@
 aid: vornamencheck
 name: Vornamencheck
-description: 'Vornamencheck is a company surfaced via the API Evangelist harvest backlog (source: new-submission)
-  and added to the network as a stub for full-pipeline profiling.'
+description: Vornamencheck provides a REST API that determines the gender probability of a given first name based on the specified country. The
+  service returns a likelihood for male or female, helping businesses clean and personalize data, suggest appropriate salutations, and automate
+  gender-based workflows. It supports multiple languages and countries, offering a simple HTTP GET endpoint for integration into forms, databases,
+  and applications.
 url: https://raw.githubusercontent.com/api-evangelist/vornamencheck/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:new-submission
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-02 (modular-v1; was harvest)
 specificationVersion: '0.20'
 created: '2026-10-02'
 modified: '2026-10-02'
 tags:
 - Company
-apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Conformance
+  url: conformance/vornamencheck-conformance.yml
+- type: Hosts
+  url: hosts/vornamencheck-hosts.yml
+- type: DomainSecurity
+  url: security/vornamencheck-domain-security.yml
 - type: Website
-  url: https://vornamencheck.de/api/v1/openapi.json
+  url: https://vornamencheck.de
 - type: Documentation
   url: https://vornamencheck.de/en
+apis:
+- name: Vornamencheck API
+  description: REST API for gender probability of first names.
+  humanURL: https://vornamencheck.de/en
+  baseURL: https://vornamencheck.de/api/v1
+  aid: vornamencheck:vornamencheck-api
 x-submission-notes: German first-name gender classification REST API.
-x-submission-probe: root 200; OpenAPI 3.1.0 6 paths server vornamencheck.de/api/v1; 404 probe 404; no
-  llms/MCP
+x-submission-probe: root 200; OpenAPI 3.1.0 6 paths server vornamencheck.de/api/v1; 404 probe 404; no llms/MCP
 x-submitted-by: info@vornamencheck.de (apis.io/add, 2026-09-28)
+x-enrichment:
+  date: '2026-10-02'
+  status: enriched
+  artifacts_added: 7
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
